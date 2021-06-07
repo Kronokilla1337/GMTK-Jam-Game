@@ -1,2 +1,2 @@
 # GMTK-Jam-Game
-Shared project repo
+Shared project repository
