@@ -40,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
         while(true)//Has to change to while player is alive
         {
             speed += speedInc;
+            speed = Mathf.Clamp(speed, 10f, 125f);
             if (speed % 50 == 0)
             {
                 gravityScale += (10*i);
