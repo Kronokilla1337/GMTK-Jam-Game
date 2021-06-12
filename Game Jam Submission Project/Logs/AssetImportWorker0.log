@@ -2,3 +2,117 @@ Using pre-set license
 Built from '2020.3/staging' branch; Version is '2020.3.10f1 (297d780c91bc) revision 2719096'; Using compiler version '192528614'; Build Type 'Release'
 OS: 'Windows 10 Home Single Language; OS build 19042.1052; Version 2009; 64bit' Language: 'en' Physical Memory: 16066 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+D:\Unity Programs\Unity Editor\2020.3.10f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+D:/Unity projects/GMTK-Jam-Game/Game Jam Submission Project
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+57812
+Successfully changed project path to: D:/Unity projects/GMTK-Jam-Game/Game Jam Submission Project
+D:/Unity projects/GMTK-Jam-Game/Game Jam Submission Project
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 86.80 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.10f1 (297d780c91bc)
+[Subsystems] Discovering subsystems at path D:/Unity Programs/Unity Editor/2020.3.10f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Unity projects/GMTK-Jam-Game/Game Jam Submission Project/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Radeon RX 560X (ID=0x67ef)
+    Vendor:   
+    VRAM:     4076 MB
+    Driver:   26.20.12036.4002
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Initialize mono
+Mono path[0] = 'D:/Unity Programs/Unity Editor/2020.3.10f1/Editor/Data/Managed'
+Mono path[1] = 'D:/Unity Programs/Unity Editor/2020.3.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'D:/Unity Programs/Unity Editor/2020.3.10f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56348
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity Programs/Unity Editor/2020.3.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002211 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 91.15 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.440 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.004769 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 84.53 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.848 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 0.91 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3667 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 156.8 MB.
+System memory in use after: 157.1 MB.
+
+Unloading 31 unused Assets to reduce memory usage. Loaded Objects now: 4104.
+Total: 4.154000 ms (FindLiveObjects: 0.563000 ms CreateObjectMapping: 0.136600 ms MarkObjects: 3.356600 ms  DeleteObjects: 0.095600 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets
+  artifactKey: Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets using Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42d402b061de3733987d63b9cc3b64de') in 0.018188 seconds
+  Import took 0.088679 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.029663 seconds.
+  path: Assets/Scripts
+  artifactKey: Guid(ebb678aace6332143a5895e45245307a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts using Guid(ebb678aace6332143a5895e45245307a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '914fa81d2b24feb312f451a167cc3b3e') in 0.010338 seconds
+  Import took 0.017492 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 17.789935 seconds.
+  path: Assets/Prefabs
+  artifactKey: Guid(55da617b7ff4d5f4e8ad3f76eadc3a81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs using Guid(55da617b7ff4d5f4e8ad3f76eadc3a81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '695ed9dfcaf9d0463d5a64c14abca943') in 0.008785 seconds
+  Import took 0.369987 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.253309 seconds.
+  path: Assets/Scenes
+  artifactKey: Guid(00154de108a44344c84b293a684c0ee0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes using Guid(00154de108a44344c84b293a684c0ee0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e9bb242864a0cba7d0780bb5c632604') in 0.010842 seconds
+  Import took 0.229646 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.502220 seconds.
+  path: Assets/Scenes/SampleScene
+  artifactKey: Guid(987f9b249565b0d44839919fd8938506) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleScene using Guid(987f9b249565b0d44839919fd8938506) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a02146940d2c056e0f529f2ff91ebc2f') in 0.011783 seconds
+  Import took 0.050823 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 20.106800 seconds.
+  path: Assets/Scenes/DragoRyu_Testing.unity
+  artifactKey: Guid(801ab3cf30b88f64085e880f0a877518) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/DragoRyu_Testing.unity using Guid(801ab3cf30b88f64085e880f0a877518) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8305cefd6039b0b720949c299f668b09') in 0.029083 seconds
+  Import took 0.037674 seconds .
+
