@@ -13,18 +13,21 @@ public class Waypoint : MonoBehaviour
         platoformFactory = FindObjectOfType<PlatformFactory>();
     }
 
-    private void OnMouseOver()
+    private void OnMouseOver2D()
     {
+        Debug.Log("Waypoint OnMouseOver2D Function Called");
         if (Input.GetKey(KeyCode.Mouse0))
         {
             if (isOccupied)
             {
                 platoformFactory.AddPlatform(this);
+                
             }
             else
             {
                 platoformFactory.DestroyPlatform(this);
             }
+
         }
     }
 

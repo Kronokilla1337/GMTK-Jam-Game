@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour
 {
-    private void OnMouseOver()
+    private void OnMouseOver2D()
     {
         if (Input.GetKey(KeyCode.Mouse1))
         {
