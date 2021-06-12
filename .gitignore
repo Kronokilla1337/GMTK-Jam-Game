@@ -42,3 +42,6 @@ ehthumbs.db
 Thumbs.db
 **/*.log
 Game Jam Submission Project/Packages/com.unity.2d.tilemap.extras/2d-extras/
+Game Jam Submission Project/Logs/AssetImportWorker0.log
+Game Jam Submission Project/Logs/shadercompiler-AssetImportWorker0.log
+Game Jam Submission Project/Logs/shadercompiler-UnityShaderCompiler.exe0.log
