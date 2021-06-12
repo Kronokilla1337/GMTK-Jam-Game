@@ -8,14 +8,21 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float speedInc;//float value to tell how much to increment
     [SerializeField] float waitForIncrease;//float value to tell how long to wait before incrementing the speed
+    public bool canMove;
     void Start()
     {
+        canMove = true;
         StartCoroutine(SpeedIncrease());
     }
 
     private void FixedUpdate()
     {
-        controller.Move(speed * Time.fixedDeltaTime, false, false);
+        if(canMove)
+            controller.Move(speed * Time.fixedDeltaTime, false, false);
+    }
+    public void MoveBool(bool can)
+    {
+        canMove = can;
     }
     IEnumerator SpeedIncrease()
     {
