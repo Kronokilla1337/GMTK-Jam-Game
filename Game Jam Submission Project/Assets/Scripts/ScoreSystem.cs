@@ -6,6 +6,7 @@ using TMPro;
 public class ScoreSystem : MonoBehaviour
 {
     [SerializeField] PlayerMovement Player;
+    [SerializeField] TMP_Text Scoretext;
     bool startTimer = true;
     int timeStart = 0;
     private void Update()
@@ -21,6 +22,7 @@ public class ScoreSystem : MonoBehaviour
         while(Player.canMove)
         {
             timeStart++;
+            Scoretext.text = ""+timeStart;
             yield return new WaitForSeconds(1f);
         }
     }
