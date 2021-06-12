@@ -15,19 +15,20 @@ public class Waypoint : MonoBehaviour
 
     private void OnMouseOver()
     {
-        
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             if (!isOccupied)
             {
                 platoformFactory.AddPlatform(this);
-                Debug.Log("Waypoint OnMouseOver2D Function Called");
             }
             else
             {
                 platoformFactory.DestroyPlatform(this);
             }
-
+        }
+        if (Input.GetKeyDown(KeyCode.Mouse1) && isOccupied)
+        {
+            platoformFactory.RotatePlatform(this);
         }
     }
 
