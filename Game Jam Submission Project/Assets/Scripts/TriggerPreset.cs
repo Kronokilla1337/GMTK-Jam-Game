@@ -10,7 +10,8 @@ public class TriggerPreset : MonoBehaviour
         if(collision.tag=="Player")
         {
             LevelGenerator.Instance.GeneratePreset(transform.position, difference);
-            Destroy(this.gameObject, 10f);
+            Debug.Log("Collided");
+            Destroy(this.gameObject, 40f);
         }
     }
     private void OnBecameInvisible()

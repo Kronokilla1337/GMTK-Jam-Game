@@ -20,7 +20,10 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         if (canMove)
+        {
             controller.Move(speed * Time.fixedDeltaTime, false, false);
+        }
+            
         if(controller.IsGrounded())
         {
             rb.gravityScale = 0f;
