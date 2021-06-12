@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour
 {
-    private void OnMouseOver2D()
+    private void OnMouseOver()
     {
-        if (Input.GetKey(KeyCode.Mouse1))
+        if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             if (transform.rotation == Quaternion.identity)
             {

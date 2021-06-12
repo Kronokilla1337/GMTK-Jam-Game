@@ -30,7 +30,7 @@ public class PlatformFactory : MonoBehaviour
         {
             if (platform.position == waypoint.transform.position)
             {
-                Destroy(platform);
+                Destroy(platform.gameObject);
                 currentNoPlatforms--;
                 waypoint.isOccupied = false;
                 return;
