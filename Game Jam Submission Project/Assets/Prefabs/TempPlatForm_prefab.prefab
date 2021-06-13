@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6006750802108418124}
   - component: {fileID: 6006750802108418123}
   - component: {fileID: 6006750802108418122}
+  - component: {fileID: 4930559900407806022}
   m_Layer: 3
   m_Name: TempPlatForm_prefab
   m_TagString: Untagged
@@ -109,3 +110,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &4930559900407806022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6006750802108418121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dd7ac6f0746fb64c984ce7f9953415a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -6,11 +6,11 @@ public class Waypoint : MonoBehaviour
 {
     [HideInInspector] public bool isOccupied = false;
 
-    private PlatformFactory platoformFactory;
+    private PlatformFactory platformFactory;
 
     private void Start()
     {
-        platoformFactory = FindObjectOfType<PlatformFactory>();
+        platformFactory = FindObjectOfType<PlatformFactory>();
     }
 
     private void OnMouseOver()
@@ -19,16 +19,16 @@ public class Waypoint : MonoBehaviour
         {
             if (!isOccupied)
             {
-                platoformFactory.AddPlatform(this);
+                platformFactory.AddPlatform(this);
             }
             else
             {
-                platoformFactory.DestroyPlatform(this);
+                platformFactory.DestroyPlatform(this);
             }
         }
         if (Input.GetKeyDown(KeyCode.Mouse1) && isOccupied)
         {
-            platoformFactory.RotatePlatform(this);
+            platformFactory.RotatePlatform(this);
         }
     }
 
