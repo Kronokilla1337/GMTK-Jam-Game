@@ -8,6 +8,7 @@ public class CollisionHandeler : MonoBehaviour
     [SerializeField] float timeOfDeathAnimation;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Material charMat;
+    [SerializeField] ScoreSystem scoreSystem;
     public float fade=1f;
     PlayerMovement player;
     bool hasDied;
@@ -50,8 +51,8 @@ public class CollisionHandeler : MonoBehaviour
         {
             Destroy(this.gameObject, 6f);
             Time.timeScale = 0f;
-           
-           // deathScreen.SetActive(true);   
+            deathScreen.SetActive(true);
+            scoreSystem.ChangeScoreOnEndScreen();
         }
     }
     

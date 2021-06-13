@@ -7,6 +7,7 @@ public class ScoreSystem : MonoBehaviour
 {
     [SerializeField] PlayerMovement Player;
     [SerializeField] TMP_Text Scoretext;
+    [SerializeField] TMP_Text endGameScoreText;
     bool startTimer = true;
     int timeStart = 0;
     private void Update()
@@ -19,11 +20,15 @@ public class ScoreSystem : MonoBehaviour
     }
     IEnumerator Timer()
     {
-        while(Player.canMove)
+        while (Player.canMove)
         {
             timeStart++;
-            Scoretext.text = ""+timeStart;
+            Scoretext.text = "" + timeStart;
             yield return new WaitForSeconds(1f);
         }
+    }
+    public void ChangeScoreOnEndScreen()
+    {
+        endGameScoreText.text = "Score : " + timeStart;
     }
 }
