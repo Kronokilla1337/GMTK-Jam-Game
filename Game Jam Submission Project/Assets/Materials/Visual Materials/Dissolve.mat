@@ -41,7 +41,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - PixelSnap: 0
-    - Vector1_cfdf89a3a18249b28bfee42c59dd9f9e: 30
+    - Vector1_cfdf89a3a18249b28bfee42c59dd9f9e: 11.4
     - _Edge: 0.13
     - _EnableExternalAlpha: 0
     - _Fade: 1
