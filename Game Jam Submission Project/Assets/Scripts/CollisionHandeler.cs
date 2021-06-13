@@ -6,6 +6,7 @@ public class CollisionHandeler : MonoBehaviour
 {
     [SerializeField] GameObject deathScreen;
     [SerializeField] float timeOfDeathAnimation;
+    [SerializeField] Rigidbody2D rb;
     [SerializeField] Material charMat;
     public float fade=1f;
     PlayerMovement player;
@@ -19,15 +20,20 @@ public class CollisionHandeler : MonoBehaviour
     {
         if(transform.position.y <= -10f && !hasDied)
         {
-            Death();
             hasDied = true;
+
         }
         if(hasDied)
         {
-            if(fade>=0)
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
+            if (fade>=0)
             {
-                fade -= Time.deltaTime;
+                fade -= Time.deltaTime*0.5f;
             }
+            if(fade<=0)
+            {
+                Death();
+            }    
         }
         charMat.SetFloat("_Fade", fade);
     }
@@ -35,16 +41,18 @@ public class CollisionHandeler : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Trap"))
         {
-            Death();
             hasDied = true;
         }
     }
     void Death()
     {
-        Time.timeScale = 0f;
-        Destroy(this.gameObject, 6f);
-        player.MoveBool(false);
-        deathScreen.SetActive(true);   
+        if(hasDied)
+        {
+            Destroy(this.gameObject, 6f);
+            Time.timeScale = 0f;
+           
+           // deathScreen.SetActive(true);   
+        }
     }
     
 }
