@@ -38,7 +38,7 @@ Material:
     m_Floats:
     - _DisEdge: 0.1
     - _DisScale: 15
-    - _Fade: 0.40988013
+    - _Fade: 0.19609296
     - _OutEdge: 0.0099
     m_Colors:
     - _Color: {r: 21.361254, g: 10.099293, b: 0, a: 1}
