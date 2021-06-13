@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] CharacterController2D controller;
-    [SerializeField] float speed;
+    public float speed;
     [SerializeField] float speedInc;//float value to tell how much to increment
     [SerializeField] float waitForIncrease;//float value to tell how long to wait before incrementing the speed
     [SerializeField] Rigidbody2D rb;

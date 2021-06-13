@@ -24,7 +24,11 @@ public class EnemyMovement : MonoBehaviour
         if (dir.x >= upThresh)
             moveSpeed += moveInc;
         if (dir.x <= downThresh)
-            moveSpeed -= Mathf.Clamp((moveInc / 2), 1f, moveSpeed);
+        {
+            moveSpeed -= (moveInc / 2);
+            moveSpeed = Mathf.Clamp(moveSpeed, 5f, moveSpeed);
+        }
+            
         dir.Normalize();
         movement = (Vector2)dir;
     }

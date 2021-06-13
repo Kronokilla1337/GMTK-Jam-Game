@@ -5,11 +5,11 @@ using TMPro;
 
 public class PlatformFactory : MonoBehaviour
 {
-    [SerializeField] int platformLimit = 2;
     [SerializeField] Platform platformPrefab;
     [SerializeField] Transform platoformParentTransform;
-    [SerializeField] TextMeshPro inventoryText;
+    [SerializeField] TMP_Text inventoryText;
 
+    private const int platformLimit = 2;
     private int currentNoPlatforms = 0;
 
     private void UpdateInventoryText()
@@ -28,7 +28,7 @@ public class PlatformFactory : MonoBehaviour
         }
         else
         {
-            //Some error message
+            Debug.Log("Error Message");
         }
     }
 

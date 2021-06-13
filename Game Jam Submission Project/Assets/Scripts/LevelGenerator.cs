@@ -5,7 +5,7 @@ using UnityEngine;
 public class LevelGenerator : MonoBehaviour
 {
     public static LevelGenerator Instance;
-    [SerializeField] GameObject[] Presets;
+    [SerializeField] TriggerPreset[] Presets;
     private void Awake()
     {
         Instance = this;
@@ -16,10 +16,11 @@ public class LevelGenerator : MonoBehaviour
     {
         
     }
-    public void GeneratePreset(Vector3 Position, float space)
+    public void GeneratePreset(Vector3 Position)
     {
-        Position.x += space;
+        
         int set = Random.Range(0, Presets.Length);
-        Instantiate(Presets[set], Position, Quaternion.identity);
+        Position.x += Presets[set].difference;
+        Instantiate(Presets[set].gameObject, Position, Quaternion.identity);
     }
 }

@@ -15,10 +15,12 @@ public class Platform : MonoBehaviour
 
     private void OnMouseOver()
     {
-        Debug.Log("Called");
+        
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             platformFactory.DestroyPlatform(baseWaypoint, this);
+            baseWaypoint.isOccupied = false;
+            Debug.Log("Mouse0 Called Destruction method");
         }
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
@@ -28,7 +30,10 @@ public class Platform : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        platformFactory.DestroyPlatform(baseWaypoint, this);
+        if(gameObject.activeSelf)
+        {
+            platformFactory.DestroyPlatform(baseWaypoint, this);
+        }
     }
 
 }

@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class TriggerPreset : MonoBehaviour
 {
-    [SerializeField] float difference;
+    public float difference;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag=="Player")
         {
-            LevelGenerator.Instance.GeneratePreset(transform.position, difference);
-            Debug.Log("Collided");
+            LevelGenerator.Instance.GeneratePreset(transform.position);
             Destroy(this.gameObject, 40f);
         }
     }
