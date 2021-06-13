@@ -26,4 +26,9 @@ public class Platform : MonoBehaviour
         }
     }
 
+    private void OnBecameInvisible()
+    {
+        platformFactory.DestroyPlatform(baseWaypoint, this);
+    }
+
 }

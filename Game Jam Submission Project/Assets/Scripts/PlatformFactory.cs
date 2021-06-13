@@ -12,12 +12,18 @@ public class PlatformFactory : MonoBehaviour
 
     private int currentNoPlatforms = 0;
 
+    private void UpdateInventoryText()
+    {
+        inventoryText.text = (platformLimit - currentNoPlatforms).ToString();
+    }
+
     public void AddPlatform(Waypoint waypoint)
     {
         if (currentNoPlatforms < platformLimit)
         {
             Instantiate(platformPrefab, waypoint.transform.position, Quaternion.identity, platoformParentTransform).baseWaypoint = waypoint;
             currentNoPlatforms++;
+            UpdateInventoryText();
             waypoint.isOccupied = true;
         }
         else
@@ -46,6 +52,7 @@ public class PlatformFactory : MonoBehaviour
         }
         Destroy(platform.gameObject);
         currentNoPlatforms--;
+        UpdateInventoryText();
         waypoint.isOccupied = false;
     }
 
@@ -68,10 +75,4 @@ public class PlatformFactory : MonoBehaviour
             platform.transform.rotation = Quaternion.identity;
         }
     }
-
-    private void Update()
-    {
-        inventoryText.text = (platformLimit - currentNoPlatforms).ToString();
-    }
-
 }
