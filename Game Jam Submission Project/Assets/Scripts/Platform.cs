@@ -20,7 +20,6 @@ public class Platform : MonoBehaviour
         {
             platformFactory.DestroyPlatform(baseWaypoint, this);
             baseWaypoint.isOccupied = false;
-            Debug.Log("Mouse0 Called Destruction method");
         }
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {

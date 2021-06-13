@@ -16,11 +16,11 @@ public class LevelGenerator : MonoBehaviour
     {
         
     }
-    public void GeneratePreset(Vector3 Position)
+    public void GeneratePreset(Vector3 endPosition)
     {
         
         int set = Random.Range(0, Presets.Length);
-        Position.x += Presets[set].difference;
-        Instantiate(Presets[set].gameObject, Position, Quaternion.identity);
+        float Position = Presets[set].difference + endPosition.x;
+        Instantiate(Presets[set].gameObject, new Vector3(Position, 0, 0), Quaternion.identity);
     }
 }

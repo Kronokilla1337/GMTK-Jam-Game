@@ -5,11 +5,12 @@ using UnityEngine;
 public class TriggerPreset : MonoBehaviour
 {
     public float difference;
+    [SerializeField] Transform endPosition;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag=="Player")
         {
-            LevelGenerator.Instance.GeneratePreset(transform.position);
+            LevelGenerator.Instance.GeneratePreset(endPosition.position);
             Destroy(this.gameObject, 40f);
         }
     }
