@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlatformFactory : MonoBehaviour
 {
     [SerializeField] int platformLimit = 2;
-    [SerializeField] GameObject platformPrefab;
+    [SerializeField] Platform platformPrefab;
     [SerializeField] Transform platoformParentTransform;
+    [SerializeField] TextMeshPro inventoryText;
 
     private int currentNoPlatforms = 0;
 
@@ -14,7 +16,7 @@ public class PlatformFactory : MonoBehaviour
     {
         if (currentNoPlatforms < platformLimit)
         {
-            Instantiate(platformPrefab, waypoint.transform.position, Quaternion.identity, platoformParentTransform);
+            Instantiate(platformPrefab, waypoint.transform.position, Quaternion.identity, platoformParentTransform).baseWaypoint = waypoint;
             currentNoPlatforms++;
             waypoint.isOccupied = true;
         }
@@ -24,80 +26,52 @@ public class PlatformFactory : MonoBehaviour
         }
     }
 
-    public void DestroyPlatform(Waypoint waypoint)
+    private Platform FindPlatform(Waypoint waypoint, Platform platform)
     {
-        foreach (Transform platform in platoformParentTransform)
+        foreach (Transform transform in platoformParentTransform)
         {
-            if (platform.position == waypoint.transform.position)
+            if (transform.position == waypoint.transform.position)
             {
-                Destroy(platform.gameObject);
-                currentNoPlatforms--;
-                waypoint.isOccupied = false;
-                return;
+                platform = transform.GetComponent<Platform>();
             }
+        }
+        return platform;
+    }
+
+    public void DestroyPlatform(Waypoint waypoint, Platform platform = null)
+    {
+        if (platform == null)
+        {
+            platform = FindPlatform(waypoint, platform);
+        }
+        Destroy(platform.gameObject);
+        currentNoPlatforms--;
+        waypoint.isOccupied = false;
+    }
+
+    public void RotatePlatform(Waypoint waypoint, Platform platform = null)
+    {
+        if (platform == null)
+        {
+            platform = FindPlatform(waypoint, platform);
+        }
+        if (platform.transform.rotation == Quaternion.identity)
+        {
+            platform.transform.rotation = Quaternion.Euler(Vector3.forward * 45f);
+        }
+        else if (platform.transform.rotation == Quaternion.Euler(Vector3.forward * 45f))
+        {
+            platform.transform.rotation = Quaternion.Euler(Vector3.back * 45f);
+        }
+        else if (platform.transform.rotation == Quaternion.Euler(Vector3.back * 45f))
+        {
+            platform.transform.rotation = Quaternion.identity;
         }
     }
 
-    public void DestroyPlatform(GameObject gameObject)
+    private void Update()
     {
-        Waypoint[] waypoints = FindObjectsOfType<Waypoint>();
-        foreach (Waypoint waypoint in waypoints)
-        {
-            if (gameObject.transform.position == waypoint.transform.position)
-            {
-                Destroy(gameObject.gameObject);
-                currentNoPlatforms--;
-                waypoint.isOccupied = false;
-                return;
-            }
-        }
-    }
-
-    public void RotatePlatform(Waypoint waypoint)
-    {
-        foreach (Transform platform in platoformParentTransform)
-        {
-            if (platform.position == waypoint.transform.position)
-            {
-                if (platform.rotation == Quaternion.identity)
-                {
-                    platform.rotation = Quaternion.Euler(Vector3.forward * 45f);
-                }
-                else if (platform.rotation == Quaternion.Euler(Vector3.forward * 45f))
-                {
-                    platform.rotation = Quaternion.Euler(Vector3.back * 45f);
-                }
-                else if (platform.rotation == Quaternion.Euler(Vector3.back * 45f))
-                {
-                    platform.rotation = Quaternion.identity;
-                }
-                return;
-            }
-        }
-    }
-
-    public void RotatePlatform(GameObject gameObject)
-    {
-        Waypoint[] waypoints = FindObjectsOfType<Waypoint>();
-        foreach (Waypoint waypoint in waypoints)
-        {
-            if (gameObject.transform.position == waypoint.transform.position)
-            {
-                if (gameObject.transform.rotation == Quaternion.identity)
-                {
-                    gameObject.transform.rotation = Quaternion.Euler(Vector3.forward * 45f);
-                }
-                else if (gameObject.transform.rotation == Quaternion.Euler(Vector3.forward * 45f))
-                {
-                    gameObject.transform.rotation = Quaternion.Euler(Vector3.back * 45f);
-                }
-                else if (gameObject.transform.rotation == Quaternion.Euler(Vector3.back * 45f))
-                {
-                    gameObject.transform.rotation = Quaternion.identity;
-                }
-                return;
-            }
-        }
+        inventoryText.text = (platformLimit - currentNoPlatforms).ToString();
     }
 
 }

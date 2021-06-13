@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour
 {
+    [HideInInspector] public Waypoint baseWaypoint;
+
     private PlatformFactory platformFactory;
 
     void Start()
@@ -16,11 +18,11 @@ public class Platform : MonoBehaviour
         Debug.Log("Called");
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            platformFactory.DestroyPlatform(gameObject);
+            platformFactory.DestroyPlatform(baseWaypoint, this);
         }
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-            platformFactory.RotatePlatform(gameObject);
+            platformFactory.RotatePlatform(baseWaypoint, this);
         }
     }
 
