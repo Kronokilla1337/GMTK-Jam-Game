@@ -25,11 +25,7 @@ public class CollisionHandeler : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Trap"))
         {
-<<<<<<< Updated upstream
             Death();   
-=======
-            Death()   
->>>>>>> Stashed changes
         }
     }
     void Death()
@@ -38,10 +34,7 @@ public class CollisionHandeler : MonoBehaviour
         if (true) //animation ended
         {
             Time.timeScale = 0f;
-<<<<<<< Updated upstream
             Destroy(this.gameObject, 5f);
-=======
->>>>>>> Stashed changes
             player.MoveBool(false);
             deathScreen.SetActive(true);
         }
