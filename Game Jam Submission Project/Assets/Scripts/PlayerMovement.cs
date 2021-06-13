@@ -10,11 +10,19 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float waitForIncrease;//float value to tell how long to wait before incrementing the speed
     [SerializeField] Rigidbody2D rb;
     [SerializeField] float gravityScale;
+    [SerializeField] Animator anim;
     public bool canMove;
     void Start()
     {
         canMove = true;
         StartCoroutine(SpeedIncrease());
+    }
+
+    private void Update()
+    {
+
+        anim.SetBool("OnGround", controller.IsGrounded());
+        Debug.Log(controller.IsGrounded());
     }
 
     private void FixedUpdate()
