@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using TMPro;
 
 public class PlatformFactory : MonoBehaviour
@@ -8,6 +9,9 @@ public class PlatformFactory : MonoBehaviour
     [SerializeField] Platform platformPrefab;
     [SerializeField] Transform platoformParentTransform;
     [SerializeField] TMP_Text inventoryText;
+    [SerializeField] AudioClip WallPlacementSFX;
+    [SerializeField] AudioClip WallDestroySFX;
+    [SerializeField] AudioClip WallRotateSFX;
 
     private const int platformLimit = 2;
     private int currentNoPlatforms = 0;
@@ -25,6 +29,7 @@ public class PlatformFactory : MonoBehaviour
             currentNoPlatforms++;
             UpdateInventoryText();
             waypoint.isOccupied = true;
+            AudioSource.PlayClipAtPoint(WallPlacementSFX, Vector3.zero);
         }
         else
         {
@@ -54,6 +59,8 @@ public class PlatformFactory : MonoBehaviour
         currentNoPlatforms--;
         UpdateInventoryText();
         waypoint.isOccupied = false;
+        AudioSource.PlayClipAtPoint(WallDestroySFX, Vector3.zero);
+
     }
 
     public void RotatePlatform(Waypoint waypoint, Platform platform = null)
@@ -74,5 +81,6 @@ public class PlatformFactory : MonoBehaviour
         {
             platform.transform.rotation = Quaternion.identity;
         }
+        AudioSource.PlayClipAtPoint(WallRotateSFX, Vector3.zero);
     }
 }
