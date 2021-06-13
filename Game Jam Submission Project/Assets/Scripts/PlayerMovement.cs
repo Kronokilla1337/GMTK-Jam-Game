@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator SpeedIncrease()
     {
         int i = 1;
-        while(true)//Has to change to while player is alive
+        while(canMove)//Has to change to while player is alive
         {
             speed += speedInc;
             speed = Mathf.Clamp(speed, 10f, 125f);
