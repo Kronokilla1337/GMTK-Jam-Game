@@ -10,6 +10,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] float downThresh;
     [SerializeField] PlayerMovement player;
     [SerializeField] Rigidbody2D rb;
+    [SerializeField] CollisionHandeler coll;
     Vector3 dir;
     Vector2 movement;
 
@@ -40,6 +41,10 @@ public class EnemyMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
+        {
             Debug.Log("Caught The Player");
+            coll.setDeath(true);
+        }
+            
     }
 }

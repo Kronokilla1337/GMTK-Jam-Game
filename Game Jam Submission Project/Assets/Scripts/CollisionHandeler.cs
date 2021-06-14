@@ -16,6 +16,7 @@ public class CollisionHandeler : MonoBehaviour
     {
         player = GetComponent<PlayerMovement>();
         hasDied = false;
+        Time.timeScale = 1f;
     }
     private void Update()
     {
@@ -37,6 +38,10 @@ public class CollisionHandeler : MonoBehaviour
             }    
         }
         charMat.SetFloat("_Fade", fade);
+    }
+    public void setDeath(bool b)
+    {
+        hasDied = b;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

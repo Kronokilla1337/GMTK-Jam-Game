@@ -16,7 +16,7 @@ public class ButtonHandeler : MonoBehaviour
     }
 
     public void LoadScene(int buildNumber)
-    {
+    {       
         SceneManager.LoadScene(buildNumber);
     }
 
